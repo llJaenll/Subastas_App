@@ -1,7 +1,9 @@
-package com.example.consulting.subastas_app
+package com.example.consulting.subastas_app.others
 
 import android.app.Activity
 import android.content.Intent
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.widget.Toast
 
 
@@ -12,3 +14,6 @@ inline fun <reified T:Activity>Activity.goActivity(noinline ext:Intent.()-> Unit
     intent.ext()
     startActivity(intent)
 }
+
+fun ViewGroup.inflar(layout:Int)
+        = LayoutInflater.from(context).inflate(layout,this,false)!!
