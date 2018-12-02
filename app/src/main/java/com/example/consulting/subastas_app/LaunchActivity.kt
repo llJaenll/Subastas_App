@@ -3,6 +3,7 @@ package com.example.consulting.subastas_app
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.consulting.subastas_app.others.goActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LaunchActivity : AppCompatActivity() {

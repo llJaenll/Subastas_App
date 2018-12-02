@@ -13,6 +13,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
 import android.app.ProgressDialog
+import com.example.consulting.subastas_app.others.goActivity
+import com.example.consulting.subastas_app.others.toast
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 
 

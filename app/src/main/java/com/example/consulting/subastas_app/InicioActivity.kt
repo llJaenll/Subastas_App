@@ -1,10 +1,9 @@
 package com.example.consulting.subastas_app
 
 import android.graphics.Color
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.hololo.tutorial.library.TutorialActivity
-import android.graphics.Color.parseColor
+import com.example.consulting.subastas_app.others.goActivity
 import com.hololo.tutorial.library.Step
 
 

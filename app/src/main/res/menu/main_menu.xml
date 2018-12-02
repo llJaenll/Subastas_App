@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<group android:checkableBehavior="single" >
+		<item
+				android:id="@+id/home"
+				android:title="@string/menu_home"
+				android:icon="@drawable/ic_home"/>
+		<item
+				android:id="@+id/categorias"
+				android:title="@string/categorias"
+				android:icon="@drawable/ic_categorias"/>
+		<item
+				android:id="@+id/vender"
+				android:title="@string/ventas"
+				android:icon="@drawable/ic_vender"/>
+		<item
+				android:id="@+id/reportar"
+				android:title="@string/reportar"
+				android:icon="@drawable/ic_report"/>
+	</group>
+
+	<item android:title="@string/menu_otros">
+
+		<menu>
+			<item
+					android:id="@+id/perfil"
+					android:title="@string/menu_perfil"
+					android:icon="@drawable/ic_perfil"/>
+			<item
+				android:id="@+id/cerrarsesion"
+				android:title="@string/cerrar_sesion"
+				android:icon="@drawable/ic_cerrar_sesion"/>
+		</menu>
+	</item>
+
+</menu>
