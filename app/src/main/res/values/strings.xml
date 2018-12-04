@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Subastas_App</string>
-    <string name="menu_home">Home</string>
+    <string name="app_name">Subastas Online</string>
+    <string name="menu_home">Inicio</string>
     <string name="ventas">Vender</string>
     <string name="categorias">Categorías</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>

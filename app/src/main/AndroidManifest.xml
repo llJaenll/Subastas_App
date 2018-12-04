@@ -22,7 +22,9 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Dummy" />
-        <activity android:name=".ProductoActivity"></activity>
+        <activity android:name=".ProductoActivity" />
+        <activity android:name=".ListProdActivity" />
+        <activity android:name=".VenderActivity"></activity>
     </application>
 
 </manifest>

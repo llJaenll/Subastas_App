@@ -8,14 +8,24 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
+import android.widget.LinearLayout
 import com.example.consulting.subastas_app.fragments.ListaCategoriaFragment
 import com.example.consulting.subastas_app.fragments.homeFragment
+import com.example.consulting.subastas_app.others.goActivity
 import com.example.consulting.subastas_app.others.toast
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.navheader.*
+import kotlinx.android.synthetic.main.navheader.view.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
-
+    private val mAuth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+    private val user = mAuth.currentUser!!
     lateinit var tb: Toolbar
+    lateinit var nave: NavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +34,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //Instanciar Toolbar
         tb = barra_navegacion as Toolbar
         tb.title = getString(R.string.app_name)
+        nave = nav as NavigationView
+        //modificar el nav con valores del correo
+        nave.getHeaderView(0).txtNombreNav.text = user.displayName
+        nave.getHeaderView(0).txtCorreoNav.text = user.email
+
+        //txtCorreoNav.text = "ddd"//user.email
+        //txtNombreNav.text ="ddd"// user.displayName
 
         //Instanciar navigation
         setupNavigation()
@@ -51,9 +68,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.home->setupFragments(homeFragment())
             R.id.categorias->setupFragments(ListaCategoriaFragment())
             R.id.perfil->toast("Estás en el perfil")
+            R.id.cerrarsesion->cerrarSession()
+            R.id.vender->goActivity<VenderActivity>()
+
         }
         drawer.closeDrawer(GravityCompat.START)
         return true
+    }
+    fun cerrarSession(){
+        mAuth.signOut()
+       goActivity<LoginActivity>()
     }
 
     override fun onBackPressed() {
